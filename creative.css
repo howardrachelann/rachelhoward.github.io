@@ -1,0 +1,33 @@
+/* ===== Creative Fun ===== */
+.creative { padding-top: 104px; padding-bottom: 160px; }
+.creative h1 { font-family: var(--font-head); font-weight: 800; font-size: clamp(36px, 3.6vw, 52px); line-height: 1.06; }
+.gallery { margin-top: 96px; }
+.gallery__title {
+  font-family: var(--font-head); font-weight: 800; font-size: clamp(26px, 2.5vw, 36px); line-height: 42px;
+  padding-bottom: 14px; border-bottom: 1px solid var(--line); margin-bottom: 28px;
+}
+.gallery img { display: block; width: 100%; object-fit: cover; border-radius: 4px; background: #e2ded7; }
+
+/* Photography: equal 4:5 portrait tiles */
+.photo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px 24px; }
+.photo-grid img { aspect-ratio: 4 / 5; }
+
+/* Nail art: 4 staggered columns; each column adds up to the same height */
+.nail-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.nail-col { display: flex; flex-direction: column; gap: 20px; }
+
+/* Small hover lift */
+.gallery img { transition: transform .3s ease, box-shadow .3s ease; }
+.gallery img:hover { transform: translateY(-4px); box-shadow: 0 14px 30px rgba(0,0,0,.12); }
+
+@media (max-width: 1000px) {
+  .photo-grid { grid-template-columns: repeat(2, 1fr); }
+  .nail-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 820px) {
+  .creative { padding-top: 56px; padding-bottom: 96px; }
+  .gallery { margin-top: 64px; }
+  .photo-grid { gap: 14px; }
+  .nail-grid, .nail-col { gap: 12px; }
+}
+@media (prefers-reduced-motion: reduce) { .gallery img { transition: none; } }

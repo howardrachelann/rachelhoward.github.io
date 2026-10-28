@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Club Ability Website Redesign · Rachel Howard</title>
+<meta name="description" content="UX case study: redesigning the website for Club Ability, a bilingual nonprofit that teaches technology to families of all ages.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;800&family=Caveat&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="nav">
+  <a class="nav__logo" href="index.html" aria-label="Rachel Howard, home"><img src="img/logo.png" alt="Rachel Howard logo"></a>
+  <button class="nav__toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Menu">
+    <svg viewBox="0 0 26 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M1 1h24M1 9h24M1 17h24"/></svg>
+  </button>
+  <ul class="nav__links" id="nav-links">
+    <li><a href="index.html#work" aria-current="page">WORK</a></li>
+    <li><a href="creative-fun.html">CREATIVE FUN</a></li>
+    <li><a href="about.html">ABOUT</a></li>
+    <li><a href="resume.pdf" target="_blank" rel="noopener">RESUME</a></li>
+  </ul>
+</header>
+<script>
+  (function () {
+    var nav = document.currentScript.previousElementSibling, btn = nav.querySelector('.nav__toggle');
+    btn.addEventListener('click', function () {
+      var open = nav.classList.toggle('is-open'); btn.setAttribute('aria-expanded', open);
+    });
+    nav.querySelectorAll('.nav__links a').forEach(function (a) {
+      a.addEventListener('click', function () { nav.classList.remove('is-open'); btn.setAttribute('aria-expanded', false); });
+    });
+  })();
+</script>
+
+<main class="wrap">
+
+  <!-- Hero -->
+  <section class="cs-hero">
+    <h1>Club Ability Website Redesign</h1>
+    <p>Redesigning the website for a bilingual nonprofit that teaches technology to families of all ages.</p>
+    <div class="cs-hero__phones">
+      <img src="img/ca-hero-1.png" alt="Redesigned Club Ability homepage on mobile">
+      <img src="img/ca-hero-2.png" alt="Redesigned programs page with age filters">
+      <img src="img/ca-hero-3.png" alt="Redesigned mobile navigation menu">
+    </div>
+  </section>
+
+  <!-- Meta -->
+  <section class="meta" aria-label="Project details">
+    <div><h2>PROJECT TYPE</h2><p>Class Project</p></div>
+    <div><h2>MY ROLE</h2>
+      <ul><li>User Research</li><li>Information Architecture</li><li>Wireframing</li><li>UI Design</li><li>Prototyping</li></ul>
+    </div>
+    <div><h2>TOOLS</h2><p>Figma<br>iMotions (eye tracking)</p></div>
+    <div><h2>TIMELINE</h2><p>Jan–April 2026</p></div>
+  </section>
+
+  <!-- Summary card -->
+  <section class="summary" aria-label="Project summary">
+    <div><h2>PROBLEM</h2><p>Club Ability had grown to serve adults and families, but its website still felt like a kids' program.</p></div>
+    <div><h2>WHAT I DID</h2><p>Interviewed the founder and 6 potential users, ran eye-tracking tests with 6 participants, then reorganized the site around three clear paths for different audiences.</p></div>
+    <div><h2>OUTCOME</h2><p>Presented to Club Ability's founder as a set of research-backed design recommendations.</p></div>
+  </section>
+
+  <!-- Context -->
+  <section class="section">
+    <h2 class="section__label">Context</h2>
+    <div>
+      <p class="section__head">Club Ability makes sure language and income never stand between a family and tech education.</p>
+      <div class="section__body">
+        <p>Club Ability is a nonprofit making tech education accessible to underserved families. With bilingual programs ranging from digital literacy for kids to AI workforce training for adults, they ensure language and income are never barriers to opportunity.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Problem -->
+  <section class="section">
+    <h2 class="section__label">The Problem</h2>
+    <div>
+      <p class="section__head">Club Ability wanted to reach all ages, but the website still spoke mostly to kids.</p>
+      <div class="section__body">
+        <dl class="rows">
+          <div class="row"><dt>Audience</dt><dd>The experience currently feels more tailored to children, making it less effective for engaging parents and adult learners.</dd></div>
+          <div class="row"><dt>Navigation</dt><dd>Too many tabs, unclear labels, and unexpected content placement made important information harder to find.</dd></div>
+          <div class="row"><dt>Hierarchy</dt><dd>Important information was difficult to prioritize and find.</dd></div>
+        </dl>
+        <div class="current">
+          <img src="img/ca-current-1.png" alt="Original Club Ability homepage">
+          <img src="img/ca-current-2.png" alt="Original Club Ability programs page">
+          <img src="img/ca-current-3.png" alt="Original Club Ability page with dense content">
+          <span class="note">what the website currently looks like</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Research -->
+  <section class="section">
+    <h2 class="section__label">Research</h2>
+    <div>
+      <p class="section__head">I combined interviews with eye tracking to understand both what users said and where they looked.</p>
+      <div class="section__body">
+        <p>I needed to understand Club Ability's future vision, how people currently navigate experiences like this, and where the existing website was creating friction.</p>
+        <dl class="rows">
+          <div class="row row--wide"><dt>Stakeholder interview<span class="count">1 founder</span></dt><dd>I spoke with founder and executive director Juliette Bautista to understand the organization's goals for the redesign.</dd></div>
+          <div class="row row--wide"><dt>Audience interviews<span class="count">6 participants</span></dt><dd>I spoke with potential users about what they expect when visiting an unfamiliar website, how they respond when information is difficult to find, and what helps them feel confident taking the next step.</dd></div>
+          <div class="row row--wide"><dt>Eye tracking test<span class="count">6 participants · iMotions</span></dt><dd>I used eye tracking to observe where users focused their attention, what they missed, and how they visually navigated the existing website. This helped identify areas where hierarchy and important information weren't coming through clearly.</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <!-- Findings -->
+  <section class="section">
+    <h2 class="section__label">Findings</h2>
+    <div>
+      <p class="section__head">Users couldn't tell who the site was for, or where anything was located.</p>
+      <div class="section__body">
+        <div class="finding">
+          <h3>The site felt primarily kid-focused</h3>
+          <p>One participant immediately said the site looked like it was for kids, and described it as a site for parents signing children up. Multiple participants also struggled to find an adult learner's perspective because most visible testimonials felt child focused.</p>
+          <p class="takeaway">→ The redesign needed to preserve Club Ability's current youth audience while making adults and parents feel more intentionally represented.</p>
+        </div>
+        <div class="finding">
+          <h3>Finding key information required too much work</h3>
+          <p>Participants did not always know where information would live. One user could not find course pricing, another expected course images to lead to sign-up information, and adult testimonials were difficult to locate because users were unsure which section would contain them.</p>
+          <p class="takeaway">→ Navigation labels, content placement, and interactive cues needed to align more closely with what users naturally expected.</p>
+        </div>
+        <div class="finding">
+          <h3>Important content needed stronger hierarchy</h3>
+          <p>The eye-tracking sessions showed that users relied heavily on prominent imagery, navigation labels, and familiar interaction patterns to decide where to go next. One participant spent significant time scanning the homepage and navigation, while another repeatedly clicked elements that appeared interactive but led nowhere.</p>
+          <p class="takeaway">→ The redesign needed clearer visual priorities and more predictable interactions so users could understand what mattered and what they could click.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- Direction band -->
+<div class="band">
+  <div class="wrap">
+    <section class="section">
+      <h2 class="section__label">Defining the direction</h2>
+      <p class="section__head">How might I help every visitor quickly understand what Club Ability offers, find what they need, and take action?</p>
+    </section>
+  </div>
+</div>
+
+<main class="wrap">
+  <!-- IA -->
+  <section class="section">
+    <h2 class="section__label">Information Architecture</h2>
+    <div>
+      <p class="section__head">I organized the site around the three things visitors came to do.</p>
+      <div class="section__body">
+        <p>I organized the site around the actions Club Ability wanted visitors to take most: learn about the organization, explore and enroll in programs, and get involved through volunteering or donations. These goals became the three main navigation paths: About Us, Programs, and Get Involved.</p>
+        <div class="ia" role="img" aria-label="Sitemap: Club Ability splits into About Us, Programs, and Get Involved">
+          <div class="ia__node ia__root">Club Ability</div>
+          <div class="ia__stem"></div>
+          <div class="ia__cols">
+            <div class="ia__col">
+              <div class="ia__node">About Us</div>
+              <div class="ia__node">Our Story<br>Student Stories<br>Awards / Recognition</div>
+              <div class="ia__node">Contact</div>
+            </div>
+            <div class="ia__col">
+              <div class="ia__node">Programs</div>
+              <div class="ia__node">Adult Programs<br>Prices, info, sign-up</div>
+              <div class="ia__node">Kids Programs<br>Prices, info, sign-up</div>
+              <div class="ia__node">Calendar</div>
+            </div>
+            <div class="ia__col">
+              <div class="ia__node">Get Involved</div>
+              <div class="ia__node">Volunteer</div>
+              <div class="ia__node">Donate</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Wireframes -->
+  <section class="section">
+    <h2 class="section__label">Wireframing</h2>
+    <div>
+      <p class="section__head">With the new structure in place, I started designing how users would move through them.</p>
+      <div class="section__body">
+        <p>I turned the new site structure into wireframes for the homepage, programs, and navigation. The goal was to make it immediately clear where different audiences could begin, while keeping important information and actions easy to scan.</p>
+        <div class="wires">
+          <div class="wire">
+            <h3>Home page</h3>
+            <p>Clear audience entry points help parents, adults, and students quickly find where to start, while Club Ability's mission and community are brought forward.</p>
+            <div class="wire--crop"><img src="img/ca-wire-home.jpg" alt="Homepage wireframe with audience entry points"></div>
+          </div>
+          <div class="wire">
+            <h3>Programs</h3>
+            <p>I organized programs into simple age-based filters and surfaced key details directly on each card. This makes it easier for users to scan their options and find a program that fits their needs.</p>
+            <div class="wire--crop"><img src="img/ca-wire-programs.jpg" alt="Programs wireframe with age filters and program cards"></div>
+          </div>
+          <div class="wire">
+            <h3>Mobile navigation</h3>
+            <p>The mobile menu groups content into clear audience and action-based paths, making programs, involvement, contact, and donation options easier to find quickly.</p>
+            <div class="wire--crop"><img src="img/ca-wire-nav.jpg" alt="Mobile navigation menu wireframe"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final design -->
+  <section class="section">
+    <h2 class="section__label">Final Design</h2>
+    <div>
+      <p class="section__head">Parents, adults, and students can now find their way in from the homepage.</p>
+      <div class="final">
+        <div class="final__item">
+          <img src="img/ca-final-1.png" alt="Homepage with audience pathways for parents, adults, and students">
+          <div><h3>Clear audience pathways</h3><p>Parents, adults, and students can quickly identify where they belong instead of navigating through the same generic experience.</p></div>
+        </div>
+        <div class="final__item">
+          <img src="img/ca-final-2.png" alt="Programs page with scannable program cards">
+          <div><h3>Programs that are easier to scan</h3><p>Age ranges, pricing, and key program details are surfaced earlier so users can compare options without digging through pages.</p></div>
+        </div>
+        <div class="final__item">
+          <img src="img/ca-final-3.png" alt="Simplified mobile navigation">
+          <div><h3>Simplified mobile navigation</h3><p>Content is grouped into familiar categories and action-based pathways, making important pages easier to find.</p></div>
+        </div>
+        <div class="final__item">
+          <img src="img/ca-final-4.png" alt="Get Involved and donation options">
+          <div><h3>More visible ways to support Club Ability</h3><p>Donation and involvement opportunities are given clearer placement instead of being buried within the site.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reflection -->
+  <section class="section">
+    <h2 class="section__label">Reflection</h2>
+    <div>
+      <p class="section__head">Good design started with understanding who I was designing for.</p>
+      <div class="section__body">
+        <p>This project reminded me that good design starts with empathy. It was easy to look at the original website and immediately think about what I wanted to change visually, but talking with stakeholders and potential users showed me that the bigger challenge was understanding who the site needed to serve and what each person was trying to accomplish.</p>
+        <p>I learned to pay more attention to how different audiences experience the same information. A parent, an adult learner, and someone looking to support the organization may all visit the same website with completely different needs. Designing around those perspectives helped me make decisions based less on assumption and more on what would actually make the experience clearer and more useful for people.</p>
+      </div>
+    </div>
+  </section>
+
+  <a class="next" href="workforce-alignment.html">
+    <span>Next project</span>
+    <strong>Workforce Alignment</strong>
+  </a>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__inner">
+      <h2>You made it to the bottom! While you're here, let's connect.</h2>
+      <dl>
+        <div><dt>EMAIL</dt><dd><a href="mailto:howardrachelann@gmail.com">howardrachelann@gmail.com</a></dd></div>
+        <div><dt>LINKEDIN</dt><dd><a href="https://www.linkedin.com/in/rachelhowardd" target="_blank" rel="noopener">www.linkedin.com/in/rachelhowardd</a></dd></div>
+      </dl>
+    </div>
+    <p class="footer__credit">Rachel Howard | 2026</p>
+  </div>
+</footer>
+
+<script>
+  // Until real images are added, show a labeled placeholder instead of a broken image.
+  document.querySelectorAll('img').forEach(function (img) {
+    function swap() {
+      if (img.closest('.nav__logo')) { img.replaceWith(Object.assign(document.createElement('strong'), { textContent: 'RH' })); return; }
+      var ph = document.createElement('div');
+      ph.className = 'ph' + (img.closest('.wire') ? ' ph--wide' : '');
+      ph.style.width = getComputedStyle(img).width;
+      ph.textContent = img.getAttribute('src').split('/').pop();
+      img.replaceWith(ph);
+    }
+    if (img.complete && img.naturalWidth === 0) swap(); else img.addEventListener('error', swap);
+  });
+</script>
+</body>
+</html>

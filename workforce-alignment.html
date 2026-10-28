@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Workforce Alignment · Rachel Howard</title>
+<meta name="description" content="UX case study: redesigning UVU's Tech College Transfer page into a guided finder that shows technical college students only the credits and degrees that apply to them.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;800&family=Caveat&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="case.css">
+</head>
+<body>
+
+<header class="nav">
+  <a class="nav__logo" href="index.html" aria-label="Rachel Howard, home"><img src="img/logo.png" alt="Rachel Howard logo"></a>
+  <button class="nav__toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Menu">
+    <svg viewBox="0 0 26 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M1 1h24M1 9h24M1 17h24"/></svg>
+  </button>
+  <ul class="nav__links" id="nav-links">
+    <li><a href="index.html#work" aria-current="page">WORK</a></li>
+    <li><a href="creative-fun.html">CREATIVE FUN</a></li>
+    <li><a href="about.html">ABOUT</a></li>
+    <li><a href="resume.pdf" target="_blank" rel="noopener">RESUME</a></li>
+  </ul>
+</header>
+<script>
+  (function () {
+    var nav = document.currentScript.previousElementSibling, btn = nav.querySelector('.nav__toggle');
+    btn.addEventListener('click', function () {
+      var open = nav.classList.toggle('is-open'); btn.setAttribute('aria-expanded', open);
+    });
+    nav.querySelectorAll('.nav__links a').forEach(function (a) {
+      a.addEventListener('click', function () { nav.classList.remove('is-open'); btn.setAttribute('aria-expanded', false); });
+    });
+  })();
+</script>
+
+<main class="wrap">
+
+  <section class="cs-hero">
+    <h1>Workforce Alignment</h1>
+    <p>Simplifying how technical college students understand their transfer credits and pathways to UVU.</p>
+    <img class="cs-hero__laptop" src="img/wa-laptop.png" alt="Redesigned UVU Tech College Transfer page on a laptop">
+  </section>
+
+  <section class="meta" aria-label="Project details">
+    <div><h2>PROJECT TYPE</h2><p>UVU e2i Client Project</p></div>
+    <div><h2>MY ROLE</h2>
+      <ul><li>UX Research</li><li>Website Audit</li><li>Information Architecture</li><li>Wireframing</li><li>UI Design</li><li>Prototyping</li></ul>
+    </div>
+    <div><h2>TOOLS</h2><p>Figma</p></div>
+    <div><h2>TIMELINE</h2><p>July–September 2026</p></div>
+  </section>
+
+  <section class="summary" aria-label="Project summary">
+    <div><h2>PROBLEM</h2><p>Transfer information existed, but it was buried in long, college-by-college lists full of unfamiliar terms.</p></div>
+    <div><h2>WHAT I DID</h2><p>Audited the existing site, interviewed 8 potential students, and redesigned the page into a guided finder that shows only the credits and degrees that apply to each student.</p></div>
+    <div><h2>OUTCOME</h2><p>Presented to UVU stakeholders on September 24, 2026, and now in development.</p></div>
+  </section>
+
+  <!-- Overview -->
+  <section class="section">
+    <h2 class="section__label">Project Overview</h2>
+    <div>
+      <p class="section__head">UVU's transfer page had the right information, but students had a hard time taking action.</p>
+      <div class="section__body">
+        <p>UVU's Tech College Transfer website helps students understand how education from a Utah technical college can apply toward a degree at UVU. But the process involves a lot of information: colleges, programs, credits, course equivalents, and degree options. That makes it easy for students to lose track of what applies to them.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Problem -->
+  <section class="section">
+    <h2 class="section__label">The Problem</h2>
+    <div>
+      <p class="section__head">Too much scrolling, too many unfamiliar terms, and no clear next step.</p>
+      <div class="section__body">
+        <dl class="rows">
+          <div class="row"><dt>Navigation</dt><dd>Students had to work through multiple pieces of information before understanding which transfer pathway applied to them.</dd></div>
+          <div class="row"><dt>Clarity</dt><dd>Transfer credits, UVU degree options, and course information needed to be easier to scan and understand.</dd></div>
+          <div class="row"><dt>Next steps</dt><dd>Even after finding relevant information, the experience needed a clearer way to guide students toward what to do next.</dd></div>
+        </dl>
+        <h3 style="margin-top:48px">What the website currently looks like</h3>
+        <div class="reactions">
+          <figure><img src="img/wa-current-1.png" alt="Original transfer page opening with a long paragraph of text"><figcaption>Where do I start?</figcaption></figure>
+          <figure><img src="img/wa-current-2.png" alt="Original page listing every program for one college"><figcaption>That's a lot to scroll through</figcaption></figure>
+          <figure><img src="img/wa-current-3.png" alt="Original page showing a list of course codes for one program"><figcaption>What am I supposed to do with this?</figcaption></figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Discovery -->
+  <section class="section">
+    <h2 class="section__label">Discovery</h2>
+    <div>
+      <p class="section__head">First, I went through the site as if I were a transfer student.</p>
+      <div class="section__body">
+        <p>I started by reviewing the existing Tech College Transfer experience from a student's perspective. I looked at how information was organized, how students moved between colleges and programs, whether important transfer information was easy to understand, and what action the site encouraged them to take next.</p>
+        <div class="focus">
+          <h3>3 focus areas</h3>
+          <dl class="rows">
+            <div class="row row--wide"><dt>Finding a pathway</dt><dd>Could a student quickly identify their technical college and find the program that applied to them?</dd></div>
+            <div class="row row--wide"><dt>Understanding information</dt><dd>Once they found their program, was it clear what credits transferred and how those credits connected to UVU?</dd></div>
+            <div class="row row--wide"><dt>Knowing what comes next</dt><dd>After reviewing their transfer information, did students have an obvious next step?</dd></div>
+          </dl>
+        </div>
+        <p>The audit gave me a few early pain points, but those were still based on my own assumptions. Before making design decisions, I wanted to see whether real users were experiencing the same problems.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interviews -->
+  <section class="section">
+    <h2 class="section__label">User Interviews</h2>
+    <div>
+      <p class="section__head">Were students actually getting stuck where I thought they were?</p>
+      <div class="section__body">
+        <p>Rather than designing around my own assumptions, I interviewed 8 potential users to see where their experience matched what I'd noticed, and where it didn't.</p>
+        <div class="compare">
+          <div><h3>What I expected</h3><p>The page felt like a lot to take in at once. There was a large amount of scrolling, long sections of text, and transfer terminology that wasn't always easy to understand. Even after finding the relevant information, I was still unsure what a student was supposed to do next.</p></div>
+          <div><h3>What users told me</h3><p>The interviews confirmed many of those concerns. Users also felt there was too much scrolling, had trouble understanding what the information meant, and weren't always sure where the experience was leading them.</p></div>
+          <div class="insight"><h3>What this told me</h3>
+            <p>The solution wasn't just to shorten the page. The information needed to be broken into smaller, more intentional steps. Instead of showing everything at once, the experience could guide students through a series of choices, showing them only the information relevant to their college, program, and transfer path. It also needed to make the next step much more obvious once they reached their results.</p>
+            <p>One thing I didn't expect was that users actually wanted more opportunities to click and make choices. They felt it would be easier to navigate if they could select what applied to them instead of scrolling through everything on one page.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div class="band">
+  <div class="wrap">
+    <section class="section">
+      <h2 class="section__label">Design Direction</h2>
+      <p class="section__head">I decided to guide students through a few simple steps.</p>
+    </section>
+  </div>
+</div>
+
+<main class="wrap">
+  <section class="section" style="padding-top:56px">
+    <div aria-hidden="true"></div>
+    <div class="section__body">
+      <p>Before designing screens, I defined the path a student should be able to follow from the moment they arrive on the page to the point where they understand what comes next.</p>
+      <figure class="figure"><img src="img/wa-flow.jpg" alt="Proposed student flow: Start here, Find pathway, Review result, Request help, Confirmation"></figure>
+      <p>Once the student flow was defined, I used it to rethink the page structure. The sitemap helped me decide what information needed to appear first, what could support the transfer finder, and where students should be guided afterward.</p>
+      <figure class="figure"><figcaption>Sitemap</figcaption><img src="img/wa-sitemap.jpg" alt="Sitemap for the Tech College Transfer page with six main sections"></figure>
+      <p>With the journey and page structure defined, I started exploring how the experience could work visually.</p>
+    </div>
+  </section>
+
+  <!-- Early wireframes -->
+  <section class="section">
+    <h2 class="section__label">Early Wireframes</h2>
+    <div>
+      <p class="section__head">We led with visuals to make the page more interesting to explore.</p>
+      <div class="section__body">
+        <p>My first direction focused on breaking the experience into clearer sections, reducing the amount of information shown at once, and giving students more obvious actions throughout the page.</p>
+        <div class="annotated annotated--narrow">
+          <img src="img/wa-wire-early.jpg" alt="Early wireframe with a stats section, a carousel of college logo cards, and a programs panel">
+          <ol class="notes">
+            <li>We added a stats section near the top to give students more context about the transfer program and reinforce that this was an established pathway.</li>
+            <li>The graphic designer and I wanted the page to feel less text heavy, so we explored using each technical college's logo as a visual selection card, an idea we later moved away from.</li>
+            <li>Once a college was selected, its available programs would appear below.</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Iteration -->
+  <section class="section">
+    <h2 class="section__label">Iteration</h2>
+    <div>
+      <p class="section__head">Jakob's Law made me rethink the way users made selections.</p>
+      <div class="section__body">
+        <p>As the design became more refined, I revisited some of the interaction choices from the first wireframes.</p>
+        <div class="stack">
+          <div class="annotated">
+            <img src="img/wa-iter-dropdowns.jpg" alt="Find Your Transfer Pathway form with college and program dropdowns">
+            <ol class="notes">
+              <li>I replaced the college carousel with dropdown menus based on Jakob's Law: users are more comfortable with patterns they already recognize from other websites. Dropdowns made choosing a college and program feel more familiar and straightforward.</li>
+              <li>Not everyone visiting the site would already know their college or program, so I added a "Just exploring?" option that lets them browse without completing the guided flow.</li>
+            </ol>
+          </div>
+          <div class="annotated">
+            <img src="img/wa-iter-results.jpg" alt="Transfer results showing matching UVU degrees and credits">
+            <ol class="notes" style="counter-reset: note 2">
+              <li>After students enter their information, the page moves directly to their matching transfer options, so they don't have to search through the rest of the page.</li>
+              <li>Transfer results can be expanded or collapsed, allowing students to quickly compare their options.</li>
+              <li>Once students understand their options, the experience leads into a form so they can take the next step and connect with someone for help.</li>
+            </ol>
+          </div>
+        </div>
+        <p>The iteration focused on making the experience feel familiar while only showing students what they needed, when they needed it.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final -->
+  <section class="section">
+    <h2 class="section__label">Final Design</h2>
+    <div>
+      <p class="section__head">Now students can find their transfer credits without scrolling through everything else.</p>
+      <div class="section__body">
+        <p>The final design uses familiar interaction patterns, personalized results, expandable transfer details, and clear next steps. Students can find the information that applies to them without sorting through everything on the page.</p>
+        <div class="annotated annotated--narrow">
+          <div>
+            <div class="scroller" tabindex="0" aria-label="Full final page design, scrollable"><img src="img/wa-final-full.jpg" alt="Full redesigned Tech College Transfer page: hero, stats, pathway finder, testimonials, FAQ, and resources"></div>
+          </div>
+          <div class="stack" style="gap:40px">
+            <ol class="notes">
+              <li>Students choose their technical college and program using familiar dropdowns.</li>
+              <li>The results page surfaces only the degrees and credits connected to their selections.</li>
+              <li>Expandable sections keep detailed course information available without overwhelming the page.</li>
+            </ol>
+            <img src="img/wa-final-expand.jpg" alt="A transfer result expanded to show each UVU course and its credits">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What's next -->
+  <section class="section">
+    <h2 class="section__label">What's Next</h2>
+    <div>
+      <p class="section__head">The next step is seeing how students use the new page.</p>
+      <div class="section__body">
+        <p>The redesign is currently being developed. Once it's live, I plan to run usability tests with technical college students to see whether the new experience solves the problems we found in research. I'll focus on the same three areas from my audit:</p>
+        <ul class="next-steps">
+          <li><strong>Finding a pathway:</strong> Can students choose their college and program without help?</li>
+          <li><strong>Understanding information:</strong> Do they understand which credits transfer and how they apply to a UVU degree?</li>
+          <li><strong>Knowing what comes next:</strong> After seeing their results, do they know how to take the next step?</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reflection -->
+  <section class="section">
+    <h2 class="section__label">Reflection</h2>
+    <div>
+      <p class="section__head">This project changed how I think about simplifying complex information.</p>
+      <div class="section__body">
+        <p>This project taught me that simplifying an experience doesn't always mean removing information. Sometimes it means deciding when and how that information appears. Through research, feedback, and iteration, I learned to rely more on familiar interaction patterns and design around the decisions users actually need to make.</p>
+      </div>
+    </div>
+  </section>
+
+  <a class="next" href="club-ability.html">
+    <span>Next project</span>
+    <strong>Club Ability</strong>
+  </a>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__inner">
+      <h2>You made it to the bottom! While you're here, let's connect.</h2>
+      <dl>
+        <div><dt>EMAIL</dt><dd><a href="mailto:howardrachelann@gmail.com">howardrachelann@gmail.com</a></dd></div>
+        <div><dt>LINKEDIN</dt><dd><a href="https://www.linkedin.com/in/rachelhowardd" target="_blank" rel="noopener">www.linkedin.com/in/rachelhowardd</a></dd></div>
+      </dl>
+    </div>
+    <p class="footer__credit">Rachel Howard | 2026</p>
+  </div>
+</footer>
+</body>
+</html>

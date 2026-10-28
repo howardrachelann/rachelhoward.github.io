@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About · Rachel Howard</title>
+<meta name="description" content="Rachel Howard grew up in both Taipei and Utah and designs to connect, simplify, and make life a little better.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;800&family=Caveat&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="about.css">
+</head>
+<body>
+
+<header class="nav">
+  <a class="nav__logo" href="index.html" aria-label="Rachel Howard, home"><img src="img/logo.png" alt="Rachel Howard logo"></a>
+  <button class="nav__toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Menu">
+    <svg viewBox="0 0 26 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M1 1h24M1 9h24M1 17h24"/></svg>
+  </button>
+  <ul class="nav__links" id="nav-links">
+    <li><a href="index.html#work">WORK</a></li>
+    <li><a href="creative-fun.html">CREATIVE FUN</a></li>
+    <li><a href="about.html" aria-current="page">ABOUT</a></li>
+    <li><a href="resume.pdf" target="_blank" rel="noopener">RESUME</a></li>
+  </ul>
+</header>
+<script>
+  (function () {
+    var nav = document.currentScript.previousElementSibling, btn = nav.querySelector('.nav__toggle');
+    btn.addEventListener('click', function () {
+      var open = nav.classList.toggle('is-open'); btn.setAttribute('aria-expanded', open);
+    });
+    nav.querySelectorAll('.nav__links a').forEach(function (a) {
+      a.addEventListener('click', function () { nav.classList.remove('is-open'); btn.setAttribute('aria-expanded', false); });
+    });
+  })();
+</script><main class="wrap">
+  <section class="about">
+    <img class="about__photo" src="img/about-bench.jpg" alt="Black and white photo of Rachel sitting on a wooden park bench in a garden">
+    <div class="about__intro">
+      <p class="about__eyebrow">HI, I'M RACHEL HOWARD.</p>
+      <h1>A little more about me.</h1>
+      <div class="about__bio">
+        <p>I grew up in both Taipei and Utah, always translating between languages, expectations, and ways of doing things. It taught me to see one situation from many perspectives and to pay attention to what different people need.</p>
+        <p>That's what drew me to UX. I notice the details and care about how things look, feel, and function.</p>
+        <p>I design to connect, simplify, and make life a little better.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__inner">
+      <h2>You made it to the bottom! While you're here, let's connect.</h2>
+      <dl>
+        <div><dt>EMAIL</dt><dd><a href="mailto:howardrachelann@gmail.com">howardrachelann@gmail.com</a></dd></div>
+        <div><dt>LINKEDIN</dt><dd><a href="https://www.linkedin.com/in/rachelhowardd" target="_blank" rel="noopener">www.linkedin.com/in/rachelhowardd</a></dd></div>
+      </dl>
+    </div>
+    <p class="footer__credit">Rachel Howard | 2026</p>
+  </div>
+</footer>
+</body>
+</html>

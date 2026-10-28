@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rachel Howard · UX Designer</title>
+<meta name="description" content="Rachel Howard is a UX design student at UVU and a research-driven designer who makes complicated information easier to understand.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;800&family=Caveat&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="home.css">
+</head>
+<body>
+
+<header class="nav">
+  <a class="nav__logo" href="index.html" aria-label="Rachel Howard, home"><img src="img/logo.png" alt="Rachel Howard logo"></a>
+  <button class="nav__toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Menu">
+    <svg viewBox="0 0 26 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M1 1h24M1 9h24M1 17h24"/></svg>
+  </button>
+  <ul class="nav__links" id="nav-links">
+    <li><a href="#work">WORK</a></li>
+    <li><a href="creative-fun.html">CREATIVE FUN</a></li>
+    <li><a href="about.html">ABOUT</a></li>
+    <li><a href="resume.pdf" target="_blank" rel="noopener">RESUME</a></li>
+  </ul>
+</header>
+<script>
+  (function () {
+    var nav = document.currentScript.previousElementSibling, btn = nav.querySelector('.nav__toggle');
+    btn.addEventListener('click', function () {
+      var open = nav.classList.toggle('is-open'); btn.setAttribute('aria-expanded', open);
+    });
+    nav.querySelectorAll('.nav__links a').forEach(function (a) {
+      a.addEventListener('click', function () { nav.classList.remove('is-open'); btn.setAttribute('aria-expanded', false); });
+    });
+  })();
+</script><main>
+  <!-- Hero: "I notice [photo] things." -->
+  <section class="hero wrap">
+    <h1 class="sr-only">Hi, I'm Rachel, and I notice things.</h1>
+    <div class="hero__stage" aria-hidden="true">
+      <div class="hero__left">
+        <p class="hero__eyebrow">Hi, I'm Rachel, and...</p>
+        <span class="hero__word">I notice</span>
+      </div>
+      <div class="hero__photo"><img src="img/about-photo.png" alt=""></div>
+      <span class="hero__word hero__word--right">things<span class="dot">.</span></span>
+    </div>
+    <img class="sr-only" src="img/about-photo.png" alt="Photo of Rachel crouching on a sidewalk, chin resting on her hand">
+    <div class="hero__aside">
+      <p class="hero__line">I'm a UX design student at UVU and a research-driven designer who makes complicated information easier to understand.</p>
+      <a class="pill-cta" href="#work">See what I've been noticing <span aria-hidden="true">↘</span></a>
+    </div>
+  </section>
+
+  <!-- Plum divider -->
+  <div class="work-divider" id="work">
+    <div class="wrap work-divider__inner">
+      <h2>MY WORK</h2>
+      <span>case studies ↓</span>
+    </div>
+  </div>
+
+  <section class="work wrap">
+    <a class="case" href="workforce-alignment.html">
+      <div>
+        <h3>Workforce Alignment</h3>
+        <p class="case__desc">Making the transfer process easier to understand.</p>
+        <p class="case__tags">UX RESEARCH / IA / WEB DESIGN</p>
+        <span class="case__btn">VIEW CASE STUDY <span aria-hidden="true">↗</span></span>
+      </div>
+      <div class="case__media case__media--laptop">
+        <img src="img/wa-laptop.png" alt="Redesigned UVU Tech College Transfer homepage on a laptop">
+      </div>
+    </a>
+
+    <a class="case" href="club-ability.html">
+      <div>
+        <h3>Club Ability</h3>
+        <p class="case__desc">Designing clearer pathways for learners of all ages.</p>
+        <p class="case__tags">UX RESEARCH / TESTING / INTERACTION DESIGN</p>
+        <span class="case__btn">VIEW CASE STUDY <span aria-hidden="true">↗</span></span>
+      </div>
+      <div class="case__media case__media--phones">
+        <img src="img/ca-hero-1.png" alt="Redesigned Club Ability homepage on mobile">
+        <img src="img/ca-hero-2.png" alt="Redesigned programs page with age filters">
+        <img src="img/ca-hero-3.png" alt="Redesigned mobile navigation menu">
+      </div>
+    </a>
+  </section>
+
+  <!-- Currently: full-width plum band -->
+  <section class="currently-band">
+    <div class="wrap currently-band__inner">
+      <div>
+        <p class="currently-band__eyebrow">CURRENTLY</p>
+        <h2>Looking for a Spring/Summer 2027<br>UX or product design internship.</h2>
+        <p class="currently-band__sub">UX design student at Utah Valley University</p>
+      </div>
+      <div class="currently-band__ctas">
+        <a class="btn-on-plum" href="resume.pdf" target="_blank" rel="noopener">View resume ↗</a>
+        <a class="btn-on-plum btn-on-plum--solid" href="mailto:howardrachelann@gmail.com">Say hi →</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer footer--flush">
+  <div class="wrap">
+    <div class="footer__inner">
+      <h2>Thanks for stopping by! Let's connect.</h2>
+      <dl>
+        <div><dt>EMAIL</dt><dd><a href="mailto:howardrachelann@gmail.com">howardrachelann@gmail.com</a></dd></div>
+        <div><dt>LINKEDIN</dt><dd><a href="https://www.linkedin.com/in/rachelhowardd" target="_blank" rel="noopener">www.linkedin.com/in/rachelhowardd</a></dd></div>
+      </dl>
+    </div>
+    <p class="footer__credit">Rachel Howard | 2026</p>
+  </div>
+</footer>
+</body>
+</html>
